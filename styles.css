@@ -651,3 +651,288 @@ h1 {
     padding: 12px;
   }
 }
+
+/* =========================================
+   UNIVERSAL RESPONSIVE SYSTEM
+========================================= */
+
+/* ===== LARGE DESKTOP ===== */
+
+@media (min-width: 1440px) {
+
+  .app-shell {
+    width: min(1280px, calc(100% - 80px));
+  }
+
+}
+
+/* ===== LAPTOP ===== */
+
+@media (max-width: 1200px) {
+
+  .app-shell {
+    width: calc(100% - 40px);
+  }
+
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 992px) {
+
+  .app-shell {
+    width: calc(100% - 28px);
+    padding: 22px 0;
+  }
+
+  .exam-choices {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-card {
+    min-height: auto;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quiz-tools {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .progress-meta {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-actions {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-actions button,
+  .restart-button {
+    width: 100%;
+  }
+
+}
+
+/* ===== MOBILE LARGE ===== */
+
+@media (max-width: 768px) {
+
+  .start-panel,
+  .quiz-panel,
+  .certificate-panel,
+  .side-panel {
+    padding: 18px;
+  }
+
+  .start-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .start-copy {
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+
+  .exam-info {
+    grid-template-columns: 1fr;
+  }
+
+  .info-item {
+    text-align: center;
+  }
+
+  .info-value {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .question-pill {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .certificate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .certificate-form input,
+  .certificate-form button {
+    width: 100%;
+  }
+
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 576px) {
+
+  .app-shell {
+    width: calc(100% - 16px);
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  .start-panel,
+  .quiz-panel,
+  .certificate-panel,
+  .side-panel {
+    border-radius: 6px;
+    padding: 14px;
+  }
+
+  .exam-card {
+    padding: 16px;
+  }
+
+  .exam-card-title {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .exam-card-meta {
+    font-size: 0.85rem;
+  }
+
+  .topbar {
+    gap: 12px;
+  }
+
+  .quiz-tools {
+    gap: 8px;
+  }
+
+  .home-button,
+  .key-button {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+  }
+
+  .question-pill {
+    height: 42px;
+    font-size: 0.9rem;
+    padding: 0 12px;
+  }
+
+  .progress-wrap {
+    margin-top: 20px;
+  }
+
+  #question-text {
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .answers button {
+    width: 100%;
+    min-height: 50px;
+    font-size: 0.95rem;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+  }
+
+  .nav-actions button,
+  .restart-button {
+    width: 100%;
+  }
+
+  button {
+    min-height: 48px;
+  }
+
+  input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+}
+
+/* ===== EXTRA SMALL DEVICES ===== */
+
+@media (max-width: 380px) {
+
+  h1 {
+    font-size: 1.45rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .exam-card-title {
+    font-size: 0.95rem;
+  }
+
+  .info-value {
+    font-size: 1.7rem;
+  }
+
+  .question-pill {
+    font-size: 0.82rem;
+  }
+
+  #question-text {
+    font-size: 1rem;
+  }
+
+}
+
+/* ===== GLOBAL RESPONSIVE SAFETY ===== */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+img,
+svg,
+canvas,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+* {
+  word-wrap: break-word;
+}
