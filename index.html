@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اختبار تفاعلي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="start-panel" id="start-panel" aria-labelledby="start-title">
+        <div class="start-heading">
+          <div>
+            <p class="eyebrow">قبل ما تبدأ</p>
+            <h1 id="start-title">جاهز تختبر نفسك؟</h1>
+          </div>
+          <button class="key-button" type="button" data-exam="certificateTest" data-password="FUF" aria-label="فتح تجربة الشهادة" title="فتح تجربة الشهادة">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 7.5a5 5 0 1 1-1.45 3.52L3 21.08V17h4v-4h4.08A5 5 0 0 1 14.5 7.5Zm0 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+            </svg>
+          </button>
+          <p class="start-copy">
+            الامتحان قصير وتفاعلي، فيه أسئلة صح أو خطأ واختيار من متعدد. جاوب براحتك، تقدر ترجع للسؤال السابق، وفي النهاية هتشوف درجتك فورًا.
+          </p>
+        </div>
+
+        <div class="exam-info">
+          <div class="info-item">
+            <span class="info-value" id="start-question-total">6</span>
+            <span class="info-label">أسئلة</span>
+          </div>
+          <div class="info-item">
+            <span class="info-value">2</span>
+            <span class="info-label">أنواع أسئلة</span>
+          </div>
+          <div class="info-item">
+            <span class="info-value">90%</span>
+            <span class="info-label">للشهادة</span>
+          </div>
+        </div>
+
+        <div class="certificate-note">
+          لو جبت 90% أو أكتر، هيظهر لك زر تحميل شهادة تقدير PDF باسمك.
+        </div>
+
+        <div class="exam-choices" aria-label="اختيار الامتحان">
+          <button class="exam-card" type="button" data-exam="web">
+            <span class="exam-card-title">التعلم الرقمي أول 3 محاضرات</span>
+            <span class="exam-card-meta">100 سؤال: صح أو خطأ واختيار من متعدد</span>
+          </button>
+
+          <button class="exam-card" type="button" data-exam="general">
+            <span class="exam-card-title">التعلم الرقمي المحاضرة الرابعة والخامسة والسادسة</span>
+            <span class="exam-card-meta">100 سؤال: صح أو خطأ واختيار من متعدد</span>
+          </button>
+
+          <button class="exam-card" type="button" data-exam="psychMedium">
+            <span class="exam-card-title">امتحان نفسي د/هالة المعقد متوسط</span>
+            <span class="exam-card-meta">100 سؤال: صح أو خطأ واختيار من متعدد</span>
+          </button>
+
+          <button class="exam-card" type="button" data-exam="psychHard">
+            <span class="exam-card-title">امتحان صعب جدا محاضرات د/ هالة الجزء النفسي</span>
+            <span class="exam-card-meta">100 سؤال مستوى فائق</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="quiz-panel hidden" id="quiz-panel" aria-labelledby="quiz-title">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">اختبار تفاعلي</p>
+            <h1 id="quiz-title">اختبر معلوماتك بتجربة هادئة</h1>
+          </div>
+          <div class="quiz-tools">
+            <button id="home-btn" class="home-button" type="button" aria-label="الصفحة الرئيسية" title="الصفحة الرئيسية">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.7 12 3l9 7.7v9.1a1.2 1.2 0 0 1-1.2 1.2h-5.1v-6h-5.4v6H4.2A1.2 1.2 0 0 1 3 19.8z" />
+              </svg>
+            </button>
+            <div class="question-pill" id="question-count">السؤال 1 من 6</div>
+          </div>
+        </header>
+
+        <div class="progress-wrap" aria-label="تقدم الاختبار">
+          <div class="progress-meta">
+            <span id="question-type">صح أم خطأ</span>
+            <span>
+              <span id="score-label">0 نقطة</span>
+              <span class="progress-percent" id="progress-percent">0%</span>
+            </span>
+          </div>
+          <div class="progress-track">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+        </div>
+
+        <article class="question-card" id="question-card">
+          <h2 id="question-text"></h2>
+          <div id="answers" class="answers"></div>
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+        </article>
+
+        <footer class="actions">
+          <button id="restart-btn" class="restart-button" type="button">
+            <span aria-hidden="true">↻</span>
+            <span>إعادة الاختبار</span>
+          </button>
+          <div class="nav-actions">
+            <button id="prev-btn" class="secondary-button" type="button">السابق</button>
+            <button id="next-btn" class="primary-button" type="button">التالي</button>
+          </div>
+        </footer>
+      </section>
+
+      <aside class="side-panel hidden" id="side-panel" aria-label="ملخص الاختبار">
+        <div class="stat">
+          <span class="stat-value" id="answered-count">0</span>
+          <span class="stat-label">تمت الإجابة</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="correct-count">0</span>
+          <span class="stat-label">إجابات صحيحة</span>
+        </div>
+      </aside>
+
+      <section class="certificate-panel hidden" id="certificate-panel" aria-labelledby="certificate-title">
+        <div>
+          <p class="eyebrow">تهانينا</p>
+          <h2 id="certificate-title">أنت مؤهل لتحميل شهادة تقدير</h2>
+        </div>
+        <div class="certificate-form">
+          <label for="student-name">اسم الطالب</label>
+          <input id="student-name" type="text" placeholder="اكتب الاسم هنا" autocomplete="name" />
+          <button id="download-certificate" class="primary-button" type="button">تحميل الشهادة PDF</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="certificate-template.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
